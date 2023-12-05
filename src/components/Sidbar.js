@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const Sidbar = () => {
+const Sidbar = () => {
     return (
-        <div>sidbar</div>
+        <div>Sidbar</div>
     )
 }
+
+export default Sidbar
