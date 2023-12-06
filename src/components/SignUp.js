@@ -1,6 +1,6 @@
 import React from 'react'
 const backgroundImageUrl = 'https://www.shutterstock.com/image-vector/vector-seamless-mobile-apps-pattern-600nw-283356059.jpg';
-const Login = () => {
+const SignUp = () => {
     return (
         <>
             <section style={{ backgroundImage: `url(${backgroundImageUrl})` }}>
@@ -11,7 +11,9 @@ const Login = () => {
                     </a>
                     <div class="w-full rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 bg-gradient-to-r from-pink-500 to-orange-400 ">
                         <div class="p-6 space-y-4 md:space-y-6 sm:p-8 ">
-
+                            <div className='flex justify-center'>
+                                <p className='text-2xl font-medium text-gray-900 dark:text-white'>Đăng ký</p>
+                            </div>
                             <form class="space-y-4 md:space-y-6" action="#">
                                 <div>
                                     <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tài khoản</label>
@@ -21,18 +23,15 @@ const Login = () => {
                                     <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Mật khẩu</label>
                                     <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border focus:outline-none  border-gray-300  sm:text-sm rounded-lg  block w-full p-2.5  dark:placeholder-gray-400 text-black" required="" />
                                 </div>
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-start">
-                                    </div>
-                                    <a href="#" class="text-white hover:text-pink-900">Quên mật khẩu</a>
+                                <div>
+                                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nhập lại mật khẩu</label>
+                                    <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border focus:outline-none  border-gray-300  sm:text-sm rounded-lg  block w-full p-2.5  dark:placeholder-gray-400 text-black" required="" />
                                 </div>
                                 <div className='flex justify-center'>
-                                    <button type="submit" class="w-1/2  bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700   font-medium rounded-lg text-sm px-5 py-2.5 text-center text-white ">Đăng nhập</button>
+                                    <button type="submit" class="w-1/2  bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700   font-medium rounded-lg text-sm px-5 py-2.5 text-center text-white ">Đăng ký</button>
                                 </div>
 
-                                <p class="text-sm font-light text-gray-100 ">
-                                    Chưa có tài khoản? <a href="#" class="font-medium text-primary-600  hover:text-pink-900 dark:text-primary-500">Đăng ký ngay</a>
-                                </p>
+
                             </form>
                         </div>
                     </div>
@@ -42,4 +41,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default SignUp

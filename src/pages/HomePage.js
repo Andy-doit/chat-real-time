@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { IoMdLogIn } from "react-icons/io";
 const HomePage = () => {
     return (
-        <div className='bg-white flex justify-around items-center h-screen'>
+        <div className='bg-white flex justify-around items-center h-screen p-56'>
             <div className='flex flex-col justify-center'>
                 <div>
                     <h1 className='text-6xl font-semibold mb-4 whitespace-normal'>Tụ họp mọi lúc, mọi ngơi</h1>
@@ -21,11 +21,11 @@ const HomePage = () => {
                 </div>
 
                 <div>
-                    <p>Nếu chưa có tài khoản ? <Link to='#' className='text-pink-700 hover:text-purple-700'>Đăng ký ngay</Link></p>
+                    <p>Nếu chưa có tài khoản ? <Link to='signup' className='text-pink-700 hover:text-purple-700'>Đăng ký ngay</Link></p>
                 </div>
             </div>
 
-            <div className='w-1/2 h-auto'>
+            <div className='w-full h-auto'>
                 <img
                     src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.8562-6/120973513_338186077283942_8148888802958728934_n.png?_nc_cat=1&ccb=1-7&_nc_sid=f537c7&_nc_ohc=wDyqWgDeMysAX89Am1c&_nc_ht=scontent.fsgn2-5.fna&oh=00_AfAZzOCgN8HUk_59-JLQ7fphY5GnoACnG_1mrdAwmlAScA&oe=65749EE7"
                     className='object-contain h-80 lg:h-96 xl:h-full'
