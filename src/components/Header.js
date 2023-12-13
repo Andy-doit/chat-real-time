@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 const menuIn4 = [
-    { title: 'Tính năng' },
+    { title: 'Tính năng', path: '/featurepage' },
     { title: 'Quyền riêng tư và an toàn', path: '/privatepage' },
     { title: 'Dành cho nhà phát triển' },
 ]

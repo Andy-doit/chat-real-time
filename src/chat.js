@@ -1,11 +1,14 @@
+
 import React, { useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
 
-export default function Chat() {
+
+
+
+const Chat = () => {
     const [input, setInput] = useState('');
     const [messages, setMessages] = useState([]);
     const [name, setName] = useState('');
-
     const handleChange = (e) => {
         setInput(e.target.value);
     };
@@ -23,9 +26,7 @@ export default function Chat() {
         const enteredName = prompt('Tên bạn là gì : ');
         setName(enteredName);
         socket.emit('user connected', enteredName);
-
         socket.on('connection', (data) => {
-            // Handle connection event if needed
         });
 
         socket.on('chat message send', (data) => {
@@ -37,7 +38,6 @@ export default function Chat() {
             socket.disconnect();
         };
     }, []);
-
     return (
         <div>
             <h1>Chat app</h1>
@@ -51,5 +51,7 @@ export default function Chat() {
                 Send
             </button>
         </div>
-    );
+    )
 }
+
+export default Chat

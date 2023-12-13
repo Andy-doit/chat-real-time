@@ -6,6 +6,8 @@ import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignUpPage';
 import PrivatePage from './pages/PrivatePage';
+import Chat from './chat';
+import FeaturePage from './pages/FeaturePage';
 
 const router = createBrowserRouter([
   {
@@ -15,7 +17,9 @@ const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       { path: "login", element: <LoginPage /> },
       { path: "signup", element: <SignUpPage /> },
-      { path: "privatepage", element: <PrivatePage /> }
+      { path: "privatepage", element: <PrivatePage /> },
+      { path: "featurepage", element: <FeaturePage /> },
+      { path: "test", element: <Chat /> }
     ]
 
   }
