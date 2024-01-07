@@ -1,34 +1,40 @@
+import ChatPage from "./pages/ChatPage";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import "./style.scss";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "./context/AuthContext";
+import Home from "./pages/Home";
+import RootLayout from "./layout/RootLayout";
+import PrivatePage from "./pages/PrivatePage";
+import FeaturePage from "./pages/FeaturePage";
 
-import './App.css';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import RootLayout from './layout/RootLayout';
-import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
-import SignUpPage from './pages/SignUpPage';
-import PrivatePage from './pages/PrivatePage';
-import Chat from './chat';
-import FeaturePage from './pages/FeaturePage';
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <RootLayout />,
-    children: [
-      { index: true, element: <HomePage /> },
-      { path: "login", element: <LoginPage /> },
-      { path: "signup", element: <SignUpPage /> },
-      { path: "privatepage", element: <PrivatePage /> },
-      { path: "featurepage", element: <FeaturePage /> },
-      { path: "test", element: <Chat /> }
-    ]
-
-  }
-]);
 function App() {
+  const { currentUser } = useContext(AuthContext);
+
+  const ProtectedRoute = ({ element }) => {
+    if (!currentUser) {
+      return <Navigate to="/login" />;
+    }
+
+    return element;
+  };
+
   return (
-    <>
-      <RouterProvider router={router}></RouterProvider>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<RootLayout />}>
+          <Route index element={<Home />} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          {/* Use ProtectedRoute for routes that require authentication */}
+          <Route path="chatpage" element={<ProtectedRoute element={<ChatPage />} />} />
+          <Route path="private" element={<PrivatePage />} />
+          <Route path="feature" element={<FeaturePage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
